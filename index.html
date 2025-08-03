@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>شركه ال عسكر للنقل والشحن  - خدمة توصيل سريعة</title>
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">شركه ال عسكر للنقل والشحن <span class="accent">⚡️</span></div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="لوجو.jpg" alt="Profile" class="rounded-image">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="order-details-section">
+        <h2>طلب جديد</h2>
+        <div class="order-form">
+            <div class="form-group">
+                <label>الاسم</label>
+                <input type="text" id="fullName" placeholder="اكتب اسمك هنا">
+            </div>
+            <div class="form-group">
+                <label>رقم الهاتف</label>
+                <input type="tel" id="phone" placeholder="اكتب رقم هاتفك">
+            </div>
+            <div class="form-group">
+                <label>مكان التسليم</label>
+                <textarea id="address" placeholder="مكان التسليم ب التفصيل"></textarea>
+            </div>
+            <div class="form-group">
+                <label>مكان الاستلام</label>
+                <div class="location-input">
+                    <input type="text" id="location" placeholder="حدد موقعك" readonly>
+                    <button type="button" onclick="getLocation()" class="location-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>نوع المنقولات</label>
+                <textarea id="orderDetails" placeholder="تفاصيل"></textarea>
+            </div>
+            <div class="form-group">
+                <label>طريقة الدفع</label>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="cash" checked>
+                        <span class="payment-icon"><i class="fas fa-money-bill-wave"></i></span>
+                        <span class="payment-label">كاش</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="wallet">
+                        <span class="payment-icon"><i class="fas fa-wallet"></i></span>
+                        <span class="payment-label">محفظة إلكترونية</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>الشكاوى أو الملاحظات</label>
+                <textarea id="complaints" placeholder="اكتب هنا أي شكاوى أو ملاحظات لديك..."></textarea>
+            </div>
+            <a href="https://wa.me/201117389344" class="whatsapp-button" onclick="return sendOrder(event)">
+                <i class="fab fa-whatsapp"></i>
+                اطلب على الواتساب
+            </a>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>تواصل معنا</h2>
+        <div class="social-links">
+            <a href="https://wa.me/201117389344" class="social-btn whatsapp" aria-label="واتساب">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61577252675385&mibextid=wwXIfr&mibextid=wwXIfr" class="social-btn facebook" aria-label="فيسبوك" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/mahmoudmtotti?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn instagram" aria-label="انستجرام" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // إضافة تأثير حركة لشريط التنقل
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+            } else {
+                nav.style.transform = 'translateY(-100%)';
+            }
+        });
+
+        // إضافة انتقال سلس
+        document.querySelector('nav').style.transition = 'transform 0.3s ease-in-out';
+    </script>
+</body>
+</html>
