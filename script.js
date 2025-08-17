@@ -768,4 +768,62 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 250);
     });
+
+    // Guided Tour setup
+    function getTourSteps() {
+        return [
+            {
+                selector: '#langToggle',
+                title: 'تغيير اللغة',
+                content: 'من هنا تبدّل بين العربية والإنجليزية في أي وقت.'
+            },
+            {
+                selector: '#darkModeToggle',
+                title: 'الوضع الليلي',
+                content: 'اضغط للتبديل بين الوضع الفاتح والداكن حسب تفضيلك.'
+            },
+            {
+                selector: '.offer-btn[data-offer="1"]',
+                title: 'العروض',
+                content: 'اضغط على أي عرض لفتح التفاصيل والصور والمشاركة.'
+            },
+            {
+                selector: '.register-btn',
+                title: 'التسجيل',
+                content: 'زر سريع للتوجه لصفحة التسجيل الخاصة بنا.'
+            },
+            {
+                selector: 'a[aria-label="تواصل واتساب"]',
+                title: 'تواصل واتساب',
+                content: 'تواصل معنا مباشرة عبر واتساب لأي استفسار.'
+            },
+            {
+                selector: '.footer',
+                title: 'الفوتر',
+                content: 'هنا ستجد بيانات الحقوق وسنة النشر.'
+            }
+        ];
+    }
+
+    function startIntroTour() {
+        const steps = getTourSteps();
+        if (window.startTour && Array.isArray(steps) && steps.length) {
+            startTour(steps, { onFinish: function(){} });
+        }
+    }
+
+    // Help button to restart the tour anytime
+    const tourHelp = document.getElementById('tourHelp');
+    if (tourHelp) {
+        tourHelp.addEventListener('click', function(){
+            localStorage.setItem('hasSeenTourV1', 'true');
+            startIntroTour();
+        });
+    }
+
+    // Auto-run on first visit only
+    if (!localStorage.getItem('hasSeenTourV1')) {
+        setTimeout(startIntroTour, 1200);
+        localStorage.setItem('hasSeenTourV1', 'true');
+    }
 });
