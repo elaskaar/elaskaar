@@ -89,7 +89,7 @@ const offerDetails = {
         4: {
             title: 'عروض العالمين و الساحل الشمالي',
             description: `
-                <p>• عروض نقل رحلات خاصه من القاهره الي الساحل الشمالي بعربيات دبابه 3500 فقط لا غير</p>
+                <p>• عروض نقل رحلات خاصه من القاهره الي الساحل الشمالي بعربيات دبابة 3500 فقط لا غير</p>
                 <p>• الامتيازات</p>
                 <p>• إمكانية تحميل العربة بالكامل</p>
                 <p>• إمكانية تحديد ميعاد النقلة</p>
@@ -101,6 +101,49 @@ const offerDetails = {
                 <p>• نظام الشحن بالقطعة (من 800 إلى 1200)</p>
             `,
             image: 'العالمين.jpg'
+        },
+        5: {
+            title: 'جمامبو جميع المحافظات',
+            description: `
+                <p>• جمامبو جميع المحافظات لنقل البضائع لأي محافظة في مصر بأمان وسرعة.</p>
+                <p>• بنوفر لك عمالة مدربة وفنيين متخصصين في التحميل والتفريغ.</p>
+                <p>• خدمات صيانة فورية لأي مشكلة أثناء النقل.</p>
+                <p>• فريق دعم فني متكامل لخدمة العملاء على مدار الساعة.</p>
+                <p>• سيارات مجهزة لنقل جميع أنواع البضائع لجميع المحافظات.</p>
+                <p>• أسعار تنافسية وحلول متكاملة لأي احتياج في النقل أو الخدمات اللوجستية.</p>
+                <p>• لو محتاج نقل، عمالة، صيانة أو فنيين... إحنا جاهزين نخدمك في أي وقت وأي مكان.</p>
+            `,
+            image: 'جامبو 2.jpg'
+        },
+        6: {
+            title: 'جمامبو الجيزة',
+            description: `
+                <p>• جمامبو الجيزة لنقل البضائع داخل محافظة الجيزة والمناطق المجاورة.</p>
+                <p>• التزام بالمواعيد ودقة في التوصيل.</p>
+                <p>• أسعار مناسبة للجميع.</p>
+                <p>• سيارات حديثة ومجهزة بالكامل.</p>
+            `,
+            image: 'جمامبو2.jpg'
+        },
+        7: {
+            title: 'جمامبو الدلتا',
+            description: `
+                <p>• جمامبو الدلتا لنقل البضائع بين محافظات الدلتا بسرعة وأمان.</p>
+                <p>• خدمة شحن جزئي وكامل حسب الطلب.</p>
+                <p>• أسعار خاصة للشركات والمصانع.</p>
+                <p>• دعم فني متواصل.</p>
+            `,
+            image: 'صور00.jpg'
+        },
+        8: {
+            title: 'جمامبو الصعيد',
+            description: `
+                <p>• جمامبو الصعيد لنقل البضائع من القاهرة إلى محافظات الصعيد.</p>
+                <p>• رحلات يومية وتوصيل سريع.</p>
+                <p>• أسعار مخفضة للعقود الشهرية.</p>
+                <p>• سيارات مجهزة لنقل البضائع الثقيلة.</p>
+            `,
+            image: 'جمامبو4.jpg'
         }
     },
     en: {
@@ -160,6 +203,49 @@ const offerDetails = {
                 <p>• Parcel Shipping System (from 800 to 1200)</p>
             `,
             image: 'العالمين.jpg'
+        },
+        5: {
+            title: 'Jumbo All Governorates',
+            description: `
+                <p>• Jumbo All Governorates for fast and safe goods transport to any governorate in Egypt.</p>
+                <p>• We provide skilled labor and specialized technicians for loading and unloading.</p>
+                <p>• On-the-spot maintenance services for any issue during transport.</p>
+                <p>• A full technical support team available 24/7 for all customer needs.</p>
+                <p>• Vehicles equipped for all types of goods to all governorates.</p>
+                <p>• Competitive prices and integrated solutions for all logistics and transport needs.</p>
+                <p>• Whether you need transport, labor, maintenance, or technicians... we are ready to serve you anytime, anywhere.</p>
+            `,
+            image: 'جمامبو1.jpg'
+        },
+        6: {
+            title: 'Jumbo Giza',
+            description: `
+                <p>• Jumbo Giza for goods transport within Giza and nearby areas.</p>
+                <p>• Commitment to timing and delivery accuracy.</p>
+                <p>• Affordable prices for everyone.</p>
+                <p>• Modern, fully equipped vehicles.</p>
+            `,
+            image: 'جمامبو2.jpg'
+        },
+        7: {
+            title: 'Jumbo Delta',
+            description: `
+                <p>• Jumbo Delta for fast and safe transport between Delta governorates.</p>
+                <p>• Partial and full shipping available as needed.</p>
+                <p>• Special prices for companies and factories.</p>
+                <p>• Continuous technical support.</p>
+            `,
+            image: 'جمامبو3.jpg'
+        },
+        8: {
+            title: 'Jumbo Upper Egypt',
+            description: `
+                <p>• Jumbo Upper Egypt for goods transport from Cairo to Upper Egypt governorates.</p>
+                <p>• Daily trips and fast delivery.</p>
+                <p>• Discounted prices for monthly contracts.</p>
+                <p>• Vehicles equipped for heavy goods transport.</p>
+            `,
+            image: 'جمامبو4.jpg'
         }
     }
 };
@@ -186,6 +272,93 @@ function openOfferModal(offerId) {
             modal.classList.add('show');
             document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
         }, 10);
+
+        // إعداد روابط المشاركة
+        setTimeout(() => {
+            const shareWhatsapp = document.getElementById('shareWhatsapp');
+            const shareFacebook = document.getElementById('shareFacebook');
+            const shareMessenger = document.getElementById('shareMessenger');
+            const shareInstagram = document.getElementById('shareInstagram');
+            const pageUrl = window.location.href;
+            const title = offer.title;
+            const desc = modalDescription.textContent || title;
+            // واتساب
+            if (shareWhatsapp) {
+                shareWhatsapp.onclick = function() {
+                    const text = encodeURIComponent(title + " - " + desc + "\n" + pageUrl);
+                    window.open('https://wa.me/?text=' + text, '_blank');
+                };
+            }
+            // فيسبوك
+            if (shareFacebook) {
+                shareFacebook.onclick = function() {
+                    const fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '&quote=' + encodeURIComponent(title + " - " + desc);
+                    window.open(fbUrl, '_blank');
+                };
+            }
+            // ماسنجر
+            if (shareMessenger) {
+                shareMessenger.onclick = function() {
+                    const msgUrl = 'https://www.facebook.com/dialog/send?app_id=123456789&link=' + encodeURIComponent(pageUrl) + '&redirect_uri=' + encodeURIComponent(pageUrl);
+                    window.open(msgUrl, '_blank');
+                };
+            }
+            // إنستجرام (لا يوجد مشاركة مباشرة، ننسخ النص)
+            if (shareInstagram) {
+                shareInstagram.onclick = function() {
+                    const shareText = title + " - " + desc + "\n" + pageUrl;
+                    navigator.clipboard.writeText(shareText).then(function() {
+                        showNotification('تم نسخ نص العرض! يمكنك لصقه في إنستجرام.');
+                    });
+                };
+            }
+        }, 100);
+
+            // عداد تنازلي 25 ساعة يعمل دائماً
+            const countdownTimer = document.getElementById('countdownTimer');
+            if (countdownTimer) {
+                // استخدم مفتاح خاص لكل عرض
+                const timerKey = 'offerCountdown_' + offerId;
+                let startTime = localStorage.getItem(timerKey);
+                if (!startTime) {
+                    startTime = Date.now();
+                    localStorage.setItem(timerKey, startTime);
+                }
+                let endTime = parseInt(startTime) + 25 * 60 * 60 * 1000;
+                clearInterval(window.offerCountdownInterval);
+                function getCountdownText(hours, minutes, seconds, lang, ended) {
+                    if (ended) {
+                        return lang === 'ar' ? "انتهى العرض!" : "Offer ended!";
+                    }
+                    if (lang === 'ar') {
+                        return `ينتهي العرض خلال: ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية`;
+                    } else {
+                        return `Offer ends in: ${hours}h ${minutes}m ${seconds}s`;
+                    }
+                }
+                function updateCountdown() {
+                    let now = Date.now();
+                    let remaining = Math.max(0, Math.floor((endTime - now) / 1000));
+                    let hours = Math.floor(remaining / 3600);
+                    let minutes = Math.floor((remaining % 3600) / 60);
+                    let seconds = remaining % 60;
+                    const lang = document.documentElement.lang || 'ar';
+                    countdownTimer.textContent = getCountdownText(hours, minutes, seconds, lang, remaining <= 0);
+                    if (remaining <= 0) {
+                        clearInterval(window.offerCountdownInterval);
+                    }
+                }
+                updateCountdown();
+                window.offerCountdownInterval = setInterval(updateCountdown, 1000);
+
+                // تحديث العد التنازلي عند تغيير اللغة
+                if (!window.countdownLangListener) {
+                    window.countdownLangListener = true;
+                    document.getElementById('langToggle')?.addEventListener('click', function() {
+                        setTimeout(updateCountdown, 300);
+                    });
+                }
+            }
     }
 }
 
