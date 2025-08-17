@@ -215,7 +215,7 @@ const offerDetails = {
                 <p>• Competitive prices and integrated solutions for all logistics and transport needs.</p>
                 <p>• Whether you need transport, labor, maintenance, or technicians... we are ready to serve you anytime, anywhere.</p>
             `,
-            image: 'جمامبو1.jpg'
+            image: 'جامبو 2.jpg'
         },
         6: {
             title: 'Jumbo Giza',
@@ -519,6 +519,7 @@ const translations = {
         alexandriaOffers: "Alexandria Offers",
         upperEgyptOffers: "Upper Egypt Line",
         diamondOffers: "Diamond Package",
+        jumboAll: "Jumbo All Governorates",
         copyright: "All Rights Reserved",
         register: "Register Now"
     },
@@ -529,6 +530,7 @@ const translations = {
         alexandriaOffers: "عروض اسكندريه",
         upperEgyptOffers: "عروض خط الصعيد من بني سويف ل سوهاج",
         diamondOffers: "عروض العالمين و الساحل الشمالي",
+        jumboAll: "جامبو جميع المحافظات",
         copyright: "جميع الحقوق محفوظة",
         register: "سجل هنا"
     }
@@ -795,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 selector: 'a[aria-label="تواصل واتساب"]',
                 title: 'تواصل واتساب',
-                content: 'تواصل معنا مباشرة عبر واتساب لأي استفسار.'
+                content: 'تواصل مع المبرمج عبر الواتساب Ayman'
             },
             {
                 selector: '.footer',
